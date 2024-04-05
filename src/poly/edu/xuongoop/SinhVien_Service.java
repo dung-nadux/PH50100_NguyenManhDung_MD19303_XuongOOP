@@ -70,25 +70,12 @@ public class SinhVien_Service {
             System.out.printf("%-10s %-20s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n",
                     "MaSV", "HoTen", "NamSinh", "Nganh", "PTCN", "Triet", "TiengAnh", "C.Nganh 1", "C.Nganh 2", "DiemTB", "XepLoai");
             for (SinhVien sv : list) {
-                xuat1(sv);
+                sv.xuat();
             }
         }
     }
-
-    public void xuat1(SinhVien sv) {
-        if (sv instanceof SinhVienIT) {
-            ((SinhVienIT) sv).xuat();
-        } else if (sv instanceof SinhVienMarketing) {
-            ((SinhVienMarketing) sv).xuat();
-        } else if (sv instanceof SinhVienNgonNgu) {
-            ((SinhVienNgonNgu) sv).xuat();
-        } else if (sv instanceof SinhVienKinhTe) {
-            ((SinhVienKinhTe) sv).xuat();
-        } else if (sv instanceof SinhVienCoKhi) {
-            ((SinhVienCoKhi) sv).xuat();
-        }
-    }
-
+    
+    
     public void nhap1(SinhVien sv) {
         if (sv instanceof SinhVienIT) {
             ((SinhVienIT) sv).nhap();
@@ -115,7 +102,7 @@ public class SinhVien_Service {
                 if (sv.getMaSV().equalsIgnoreCase(id)) {
                     System.out.printf("%-10s %-20s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n",
                     "MaSV", "HoTen", "NamSinh", "Nganh", "PTCN", "Triet", "TiengAnh", "C.Nganh 1", "C.Nganh 2", "DiemTB", "XepLoai");
-                    xuat1(sv);
+                    sv.xuat();
                     flag = true;
                     break;
                 }
@@ -212,7 +199,7 @@ public class SinhVien_Service {
             }
             for (SinhVien sv : list) {
                 if (sv.diemTB() >= start && sv.diemTB() <= end) {
-                    xuat1(sv);
+                    sv.xuat();
                     flag = true;
                 }
             }
@@ -274,7 +261,7 @@ public class SinhVien_Service {
             System.out.printf("%-10s %-20s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n",
                     "MaSV", "HoTen", "NamSinh", "Nganh", "PTCN", "Triet", "TiengAnh", "C.Nganh 1", "C.Nganh 2", "DiemTB", "XepLoai");
             for (SinhVien sinhVien : list) {
-                xuat1(sinhVien);
+                sinhVien.xuat();
                 break;
             }
         }
@@ -289,7 +276,7 @@ public class SinhVien_Service {
             System.out.printf("%-10s %-20s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n",
                     "MaSV", "HoTen", "NamSinh", "Nganh", "PTCN", "Triet", "TiengAnh", "C.Nganh 1", "C.Nganh 2", "DiemTB", "XepLoai");
             for (SinhVien sinhVien : list) {
-                xuat1(sinhVien);
+                sinhVien.xuat();
                 break;
             }
         }
